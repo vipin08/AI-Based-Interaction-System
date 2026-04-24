@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artificial Intelligence-Based Interaction System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-row">
+          <div>
+            <h1>AI-Based Interaction System</h1>
+          </div>
+        </div>
+
+        <button class="sidebar-primary" id="newChatBtn" type="button">New Chat</button>
+        <div class="sidebar-divider"></div>        
+
+        <section class="profile-card">
+          <div class="profile-card__top">
+            <span class="profile-pill">Account</span>
+            <button id="clearChatBtn" class="icon-btn" type="button" title="Clear chat">↺</button>
+          </div>
+
+          <label for="usernameInput">Username</label>
+          <input id="usernameInput" type="text" placeholder="Enter your name" />
+
+          <label for="toneSelect">Tone</label>
+          <select id="toneSelect">
+            <option value="friendly">Friendly</option>
+            <option value="professional">Professional</option>
+            <option value="concise">Concise</option>
+          </select>
+
+          <button id="savePrefsBtn" class="sidebar-secondary" type="button">Save Preferences</button>
+        </section>
+
+       
+
+        <p id="statusText" class="status">Ready</p>
+      </aside>
+
+      <section class="workspace">
+        <section class="spline-shell" aria-label="Spline showcase">
+          <div class="spline-shell__glow" aria-hidden="true"></div>
+          <spline-viewer
+            class="spline-viewer"
+            loading-anim-type="spinner-small-dark"
+            url="https://prod.spline.design/n1vo8QBCQbiLBM9B/scene.splinecode"
+          ></spline-viewer>
+        </section>
+
+        <section class="conversation-shell">
+          <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+          <div id="loadingBar" class="loading hidden" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <label class="sr-only" for="messageInput">Message</label>
+            <textarea
+              id="messageInput"
+              placeholder="Ask anything..."
+              rows="3"
+              required
+            ></textarea>
+
+            <div class="composer-meta">
+              <p id="voiceStatus">Voice: unavailable</p>
+              <div class="composer-actions">
+                <button type="button" id="voiceBtn" class="secondary-btn">Voice Input</button>
+                <button type="submit" id="sendBtn" class="primary-btn">Send</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
