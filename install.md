@@ -2,44 +2,45 @@
 
 ## Prerequisites
 - Node.js installed
-- A valid API key in `backend/.env`
+- A valid API key
 - Chrome or a Chromium browser for voice input
 
 ## Steps
 
-1. Open the backend folder:
+1. Install backend dependencies from the workspace root:
+
+```bash
+npm run install:backend
+```
+
+2. Open the backend folder and create the environment file if needed:
 
 ```bash
 cd backend
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Create the environment file if needed:
-
-```bash
 copy .env.example .env
 ```
 
-4. Add your API key in `backend/.env`:
+3. Add your API key in `backend/.env`:
 
 ```env
-OPENAI_API_KEY=your_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 PORT=3000
-MAX_CONTEXT_MESSAGES=12
 ```
 
-5. Start the server:
+4. Start the server from the workspace root:
+
+```bash
+cd ..
+npm run dev
+```
+
+Or from `backend` directly:
 
 ```bash
 npm run dev
 ```
 
-6. Open the app:
+5. Open the app:
 
 ```text
 http://localhost:3000

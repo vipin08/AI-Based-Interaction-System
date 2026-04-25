@@ -10,11 +10,10 @@ An AI chat app with a modern UI, voice input, conversation memory, and personali
 - Responsive dark dashboard UI
 
 ## Main Setup
-1. Go to the backend folder.
-2. Install dependencies with `npm install`.
-3. Add your API key in `backend/.env`.
-4. Start the app with `npm run dev`.
-5. Open `http://localhost:3000` in your browser.
+1. Install backend dependencies with `npm run install:backend` from the workspace root.
+2. Add your API key in `backend/.env`.
+3. Start the app with `npm run dev` from the workspace root.
+4. Open `http://localhost:3000` in your browser.
 
 ## Project Folders
 - `frontend` - UI files
